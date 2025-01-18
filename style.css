@@ -42,7 +42,6 @@
         }
 	
 	.grid-box{ 
-		grid-template-columns: repeat(2, 1fr); 
 		height: 50vh;
 	}
 }
