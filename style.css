@@ -37,8 +37,13 @@
 		width:100%;
 	}
 	
+	.neon-box {
+	        font-size : xx-large;
+        }
+	
 	.grid-box{ 
 		grid-template-columns: repeat(2, 1fr); 
+		height: 50vh;
 	}
 }
 
