@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to Wincography</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2022.12.1/pyscript.css" />
+    <script defer src="https://pyscript.net/releases/2022.12.1/pyscript.js"></script>
+</head>
+<body>
+	<div class="headline">
+		<h1>Wincography</h1>
+		<py-script>display("Winwin Biography")</py-script>
+	</div>
+	<div class="container">
+		<div class="col-1">
+			<div class="grid-box">
+				<div class="neon-box">
+				<img src="photo.jpg">
+				</div>
+				<div class="neon-box">
+				<py-script>
+				def greetings(title, name, Cname):
+					display(f'{title}')
+					display(f'{name} ({Cname})')
+
+				greetings('Born Name', 'Dǒng Sīchéng', '董思成')
+				</py-script>
+				</div>
+				<div class="neon-box">
+				<py-script>
+				def greetings(title, name):
+					display(f'{title}')
+					display(f'{name}')
+
+				greetings('Born Place', 'Wenzhou, Zhejiang, China')
+				</py-script>
+				</div>
+				<div class="neon-box">
+				<py-script>
+				def greetings(title, name):
+					display(f'{title}')
+					display(f'{name}')
+
+				greetings('Age', '27')
+				</py-script>
+				</div>
+				<div class="neon-box">
+				<py-script>
+				def greetings(title, name):
+					display(f'{title}')
+					display(f'{name}')
+
+				greetings('Professions', 'Musician, Actor, Chinese Traditional Dancer')
+				</py-script>
+				</div>
+				<div class="neon-box">
+				<py-script>
+				def greetings(title, name):
+					display(f'{title}')
+					display(f'{name}')
+
+				greetings('Awards', 'The Annual Potential Young Actor, at the 10th Wenrong Award')
+				</py-script>
+				</div>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="neon-box" id="video">
+			<h3>Performances</h3>
+			<py-script>
+			video_urls = [
+				"https://www.youtube.com/embed/1Rh3AI73crc?si=uvagTTtdZL6yhEe6&start=55",
+				"https://www.youtube.com/embed/J27ZsDaXU2E?si=cWlm8gOc2eghq0HR&start=29",
+				"https://www.youtube.com/embed/ZZDeT3_4PX0?si=1LFynYK8WuvRrE3K"
+			]
+			
+			from pyodide import create_proxy
+			from js import document
+
+			section = document.querySelector('#video')
+
+			for url in video_urls:
+				iframe_html = f'''
+				<iframe src="{url}" 
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+					allowfullscreen></iframe>
+				'''
+				section.innerHTML += iframe_html
+			</py-script>
+			</div>
+		</div>
+	</div>
+	<footer>@爱沙-2024</footer>
+</body>
+</html>
